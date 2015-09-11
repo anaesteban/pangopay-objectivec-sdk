@@ -46,6 +46,8 @@
     _couponGifts = [NSMutableArray new];
     _coupons = [NSMutableArray new];
     _discount = nil;
+    _fidelityDiscount = nil;
+    _fidelityIdentifier = nil;
 }
 
 

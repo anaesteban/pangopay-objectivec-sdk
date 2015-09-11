@@ -4106,7 +4106,7 @@ withSuccessCallback:(PnPSuccessHandler)successHandler
     if(cart.fidelityDiscount){
         [oLine setObject:@"loyaltyDiscount" forKey:@"type"];
         NSNumber *fidelityDiscount = [NSNumber numberWithDouble:[[cart getPrice] doubleValue] - ([[cart getPrice] doubleValue] * [cart.fidelityDiscount doubleValue] / 100)];
-        netAmount = [NSNumber numberWithDouble:[netAmount doubleValue] - [fidelityDiscount doubleValue]];
+        netAmount = [NSNumber numberWithDouble:[fidelityDiscount doubleValue] * 100];
         [oLine setObject:fidelityDiscount forKey:@"amount"];
         [oLine setObject:[NSNumber numberWithDouble:[cart.fidelityDiscount doubleValue] * 100] forKey:@"number"];
         [oLine setObject:NSLocalizedString(@"Fidelización",nil) forKey:@"name"];
